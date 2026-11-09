@@ -2,6 +2,8 @@
 
 Firmware 2.14.2.
 
+User guide: [USERGUIDE.md](USERGUIDE.md).
+
 ## 1. USB identity
 
 | Role | VID:PID | Usage page | Interface |
@@ -241,13 +243,13 @@ The reader function's stack frame is `0x12` bytes. The patched epilogue is `add 
 
 ## 10. Tool
 
-`tools/wooting_spoof.py` is specific to the 60HE+.
+`tools/wooting.py` is specific to the 60HE+.
 
 ```bash
-python tools/wooting_spoof.py --status
-python tools/wooting_spoof.py --product-id 00001
-python tools/wooting_spoof.py --product-id 00001 --apply --yes
-python tools/wooting_spoof.py --recover --apply --yes
+python tools/wooting.py --status
+python tools/wooting.py --product-id 00001
+python tools/wooting.py --product-id 00001 --apply --yes
+python tools/wooting.py --recover --apply --yes
 ```
 
 Behavior:
@@ -293,7 +295,7 @@ OK
 Recovery test:
 
 ```
-python tools/wooting_spoof.py --recover --apply --yes
+python tools/wooting.py --recover --apply --yes
 crc:     0xF990D8
 recovered: <original-serial>
 ```
